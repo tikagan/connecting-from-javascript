@@ -18,7 +18,7 @@ client.connect((err) => {
     return console.error("Connection Error", err);
   }
   const searchTerm = process.argv[2]
-  client.query("SELECT * FROM famous_people WHERE last_name = $1 OR first_name = $1", [searchTerm], (err, result) => {
+  client.query("SELECT * FROM famous_people WHERE last_name = $1 OR first_name = $", [searchTerm], (err, result) => {
     if (err) {
       return console.error("error running query", err);
     }
